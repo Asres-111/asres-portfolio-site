@@ -1,0 +1,140 @@
+/* ---------- Home section ---------- */
+.home {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding-block: 3rem;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(96, 165, 250, 0.12),
+      transparent 45%
+    ),
+    var(--color-bg);
+}
+
+.home__inner {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Text on the left */
+.home__greeting {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.home__name {
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.home__title {
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.home__text {
+  color: var(--color-muted);
+  max-width: 52ch;
+  margin-bottom: 2rem;
+}
+
+.home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Decorative code card on the right */
+.home__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.code-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+
+.code-card__bar {
+  display: flex;
+  gap: 8px;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.code-card__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.code-card__body {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.c-kw {
+  color: #c4a7ff;
+}
+
+.c-var {
+  color: var(--color-primary);
+}
+
+.c-str {
+  color: #8ee0b0;
+}
+
+/* Soft fade-in when the page loads */
+.home__content {
+  animation: fade-up 0.8s ease both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Laptop and desktop: text on the left, card on the right */
+@media (min-width: 900px) {
+  .home__inner {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

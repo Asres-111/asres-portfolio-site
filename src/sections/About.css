@@ -1,0 +1,49 @@
+/* ---------- About Me section ---------- */
+.about__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about__text p {
+  color: var(--color-muted);
+  max-width: 60ch;
+  margin-bottom: 1.25rem;
+}
+
+.about__focus {
+  display: grid;
+  gap: 1rem;
+}
+
+.focus-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.focus-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.focus-card__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.focus-card__text {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Tablet and larger: text on the left, cards on the right */
+@media (min-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}

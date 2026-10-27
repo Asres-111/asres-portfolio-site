@@ -1,0 +1,9 @@
+/* Leaves room for the fixed menu at the top of the page */
+main {
+  padding-top: var(--header-height);
+}
+
+/* Temporary: makes the test sections tall enough to scroll */
+.placeholder {
+  min-height: 80vh;
+}

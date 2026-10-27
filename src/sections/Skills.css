@@ -1,0 +1,60 @@
+/* ---------- Skills section ---------- */
+.skills__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.skill-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  background-color: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  border-radius: 12px;
+}
+
+.skill-card__name {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.skill-card__text {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Tablet: two columns */
+@media (min-width: 600px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop and desktop: three columns */
+@media (min-width: 900px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
