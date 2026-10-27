@@ -21,6 +21,7 @@ if (!DATABASE_URL) {
 const sql = neon(DATABASE_URL)
 
 const app = express()
+app.set('trust proxy', 1) // the hosting service sits in front of this server
 
 app.use(helmet()) // adds safe security headers
 app.use(cors({ origin: ALLOWED_ORIGIN })) // only your website may call this server
